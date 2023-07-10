@@ -18,4 +18,13 @@ public class ExampleResourceTest {
                 .body(is("Hello from RESTEasy Reactive"));
     }
 
+    @Test
+    public void testAddEndpoint() {
+        given()
+                .when().get("/calculator/add/3/4")
+                .then()
+                .statusCode(200)
+                .body(is("7"));
+    }
+
 }
